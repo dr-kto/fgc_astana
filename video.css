@@ -1,0 +1,165 @@
+body {
+    background-color: #40ff2f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 97vh;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+.container {
+    width: 45%;
+    height: 17vh;
+    /* background-color: aliceblue; */
+    display: flex;
+    position: relative;
+}
+.mid {
+    position: absolute;
+    top: -65%;
+    transform: translateX(75%);
+    width: 35%;
+    height: 150%;
+    background-color: black;
+    overflow: hidden;
+}
+.tblue, 
+.tred
+{
+    border-radius: 2vw;
+    background-color: black;
+    width: 50%;
+    height: 100%;
+
+}
+.tblue
+.teams div {
+    width: 40%;
+    height: 33%;
+    font-size: 2vw;
+    text-align: right;
+    margin-left: 2vw;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+.tred
+.teams div {
+    width: 40%;
+    height: 33%;
+    font-size: 2vw;
+    text-align: left;
+    margin-left: 9vw;
+    color: aliceblue;
+    text-transform: uppercase;
+
+
+    
+}
+
+.mid,
+.teams {
+    border-radius: 2vw 2vw 0 0;
+    border: .7vw solid black;
+}
+.mid {
+    border-radius: 4vw 4vw 0 0;
+}
+
+.mid div {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+}
+.timer {
+    background-color: rgb(250, 194, 88);
+
+}
+.score {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+.sblue {
+    margin-top: 1.3vw;
+    background-color: rgb(91, 91, 255);
+    width: 47%;
+    height: 100% !important;
+}
+.sred {
+    margin-top: 1.3vw;
+    background-color: rgb(231, 5, 5);
+    width: 47%;
+    height: 100% !important;
+}
+.teams {
+    height: 80%;
+    display: block;
+    background-color: aqua;
+}
+.info1, 
+.info2 {
+    background-color: rgb(246, 246, 137);
+    max-width: 100%;
+    max-height: 25%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    font-weight: bolder;
+    padding: .3vw 1vw 1vw 5vw;
+    text-transform: uppercase;
+
+}
+.info2  {
+    text-align: end;
+}
+.tblue .teams {
+    background-color: rgb(91, 91, 255);
+}
+.tred .teams {
+    background-color: rgb(231, 5, 5) !important;
+}
+#gum-local {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200vmin;
+}
+.logo img {
+    object-fit: contain;
+    max-width: 80%;
+}
+.logo {
+    background-color: whitesmoke;
+    margin-bottom: .7vw;
+    border-radius: 3vw 3vw 0 0;
+
+}
+.timer {
+    font-size: 4vw;
+    font-family: sans-serif;
+}
+.score {
+    font-size: 3vw;
+    color: aliceblue;
+    font-family: sans-serif;
+}
+@keyframes score {
+    0% {
+        height: 50%;
+    }
+    100% {
+        height: 30%
+    }
+}
+.sanimation {
+    animation: score 1.5s ease 1;
+}
+/* @keyframes teams {
+    0% {
+        margin
+    }
+} */
