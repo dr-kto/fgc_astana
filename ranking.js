@@ -29,7 +29,8 @@ function getData() {
         })
     })
     
-    })
+  })
+
 }
 
 getData()
