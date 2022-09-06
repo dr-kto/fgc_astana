@@ -68,12 +68,13 @@ body {
     border-radius: 4vw 4vw 0 0;
 }
 
-.mid div {
+.mid>div:not(:nth-child(3)) {
     display: flex;
     flex-direction: column;
-    height: 30%;
+    height: 50%;
     align-items: center;
     justify-content: center;
+    font-size: 2vw;
 }
 .timer {
     background-color: rgb(250, 194, 88);
@@ -85,13 +86,17 @@ body {
     justify-content: space-between !important;
 }
 .sblue {
-    margin-top: 1.3vw;
+    padding: 1.3vmin 0;
+    text-align: center;
+    margin-top: .7vw;
     background-color: rgb(91, 91, 255);
     width: 47%;
     height: 100% !important;
 }
 .sred {
-    margin-top: 1.3vw;
+    padding: 1.3vmin 0;
+    text-align: center;
+    margin-top: .7vw;
     background-color: rgb(231, 5, 5);
     width: 47%;
     height: 100% !important;
@@ -147,16 +152,17 @@ body {
     color: aliceblue;
     font-family: sans-serif;
 }
-@keyframes score {
+/* @keyframes score {
     0% {
         height: 50%;
     }
     100% {
         height: 30%
     }
-}
-.sanimation {
-    animation: score 1.5s ease 1;
+} */
+.score_anima {
+    height: 30% !important;
+    transition:  1s ease;
 }
 /* @keyframes teams {
     0% {
