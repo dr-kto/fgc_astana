@@ -146,10 +146,6 @@ th{
     0% {
         transform: translateY(0%);
     }
-    15% {
-        transform: translateY(0%);
-
-    }
     50% {
         transform: translateY(-70%);
     }
@@ -161,6 +157,6 @@ thead {
     position: relative;
     z-index: 999;
 }
-tbody {
-    animation: scroll 35s ease 1;
+.tbody_anima {
+    animation: scroll 25s ease 1;
 }

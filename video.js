@@ -50,7 +50,7 @@ function start() {
 
 }
 function countdown(minute, second, operation) {
-
+    document.querySelector(".timer").style.fontSize = `4vw`
     var total = minute*60+second;
     
     var timer = setInterval(function() {
@@ -78,7 +78,6 @@ function countdown(minute, second, operation) {
                 var horn = new  Audio('horn.wav')
                 horn.play()
                 document.querySelector(".timer").innerHTML = "START"
-        document.querySelector(".timer").innerHTML = "";
 
                 document.querySelector(".timer").style.fontSize = `4vw`
 

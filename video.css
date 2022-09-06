@@ -22,14 +22,15 @@ body {
     transform: translateX(75%);
     width: 35%;
     height: 150%;
-    background-color: black;
+    background-color: #f2f2f2;
     overflow: hidden;
+    color: #f2f2f2;
 }
 .tblue, 
 .tred
 {
     border-radius: 2vw;
-    background-color: black;
+    background-color: #f2f2f2;
     width: 50%;
     height: 100%;
 
@@ -62,7 +63,7 @@ body {
 .mid,
 .teams {
     border-radius: 2vw 2vw 0 0;
-    border: .7vw solid black;
+    border: .7vw solid #f2f2f2;
 }
 .mid {
     border-radius: 4vw 4vw 0 0;
@@ -116,6 +117,7 @@ body {
     font-weight: bolder;
     padding: .3vw 1vw 1vw 5vw;
     text-transform: uppercase;
+    color: #4d4d4d;
 
 }
 .info2  {
