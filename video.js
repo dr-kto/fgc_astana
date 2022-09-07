@@ -1,4 +1,7 @@
-const api_url = 'https://sheet2api.com/v1/0pNr4Oq1SZeR/fgc-match'
+let match = 1
+const base = 'https://docs.google.com/spreadsheets/d/1FlHBhreAQ5ANk4wPLTGNdqjfPvhDk0Cf_Dv11jf0jzA/gviz/tq?'
+const query = encodeURIComponent('Select *  ')
+const url = base + '&tq=' + query;
 async function fetchWithTimeout(resource, options = {}) {
     const { timeout = 1000 } = options;
     
@@ -14,18 +17,24 @@ async function fetchWithTimeout(resource, options = {}) {
 async function getData() 
 {
     try {
-        const response = await fetchWithTimeout(api_url, {
+        let data
+        const response = await fetchWithTimeout(url, {
           timeout: 6000
+        })
+        .then(res => res.text())
+        .then(rep =>{
+            data = JSON.parse(rep.substr(47).slice(0,-2));
         });
-        const data = await response.json();
-        document.querySelector('.sblue').innerHTML = data[0].bscore
-        document.querySelector('.sred').innerHTML = data[0].rscore
-        document.querySelector('.b1').innerHTML = data[0].bt1
-        document.querySelector('.b2').innerHTML = data[0].bt2
-        document.querySelector('.b3').innerHTML = data[0].bt3
-        document.querySelector('.r1').innerHTML = data[0].rt1
-        document.querySelector('.r2').innerHTML = data[0].rt2
-        document.querySelector('.r3').innerHTML = data[0].rt3
+        console.log(data.table.rows)
+        console.log(data.table.rows[25].c[match+2]?.v)
+        document.querySelector('.sblue').innerHTML = data.table.rows[25].c[1].v
+        document.querySelector('.sred').innerHTML = data.table.rows[25].c[1].v
+        document.querySelector('.b1').innerHTML = data.table.rows[25].c[1]?.v
+        document.querySelector('.b2').innerHTML = data.table.rows[25].c[match+4]?.v
+        document.querySelector('.b3').innerHTML = data.table.rows[25].c[match+4]?.v
+        document.querySelector('.r1').innerHTML = data.table.rows[25].c[match+4]?.v
+        document.querySelector('.r2').innerHTML = data.table.rows[25].c[match+4]?.v
+        document.querySelector('.r3').innerHTML = data.table.rows[25].c[match+4]?.v
         
         console.log(data[0].bscore)
         getData()

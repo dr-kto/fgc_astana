@@ -26,7 +26,7 @@ async function getData()
         .then(rep =>{
             data = JSON.parse(rep.substr(47).slice(0,-2));
             output.innerHTML='';
-        })
+        });
 
         
             const row = document.createElement('tr');
@@ -53,7 +53,7 @@ async function getData()
                     
                 })
             })
-            // getData()
+            getData()
         // })
         
     } catch (error) {
