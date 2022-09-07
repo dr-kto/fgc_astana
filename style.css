@@ -48,7 +48,6 @@ body
     justify-content: space-between;
     align-items: center;
     display: flex;
-         transition: 1.25s;
 }
 header,
 footer
