@@ -53,16 +53,15 @@ async function getData()
                     
                 })
             })
-            getData()
+            // getData()
         // })
         
     } catch (error) {
         console.log(error.name === 'AbortError');
     }
-  
-  
-
 }
+getData()
+
 
 window.addEventListener('keypress', function (e) 
 {

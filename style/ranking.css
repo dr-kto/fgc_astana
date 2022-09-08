@@ -146,7 +146,7 @@ th{
         transform: translateY(0%);
     }
     50% {
-        transform: translateY(-70%);
+        transform: translateY(-75%);
     }
     100% {
         transform: translate(0%);
@@ -157,5 +157,5 @@ thead {
     z-index: 999;
 }
 .tbody_anima {
-    animation: scroll 25s ease 1;
-}
+    animation: scroll 35s ease infinite;
+}  

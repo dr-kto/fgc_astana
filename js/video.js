@@ -1,5 +1,5 @@
 let match = 1
-const base = 'https://docs.google.com/spreadsheets/d/1FlHBhreAQ5ANk4wPLTGNdqjfPvhDk0Cf_Dv11jf0jzA/gviz/tq?'
+const base = 'https://docs.google.com/spreadsheets/d/1KWi_JviCwOHwk8ICm3P5Pz512ulvox6Txj_3y4X_z_c/gviz/tq?'
 const query = encodeURIComponent('Select *  ')
 const url = base + '&tq=' + query;
 async function fetchWithTimeout(resource, options = {}) {
@@ -26,17 +26,16 @@ async function getData()
             data = JSON.parse(rep.substr(47).slice(0,-2));
         });
         console.log(data.table.rows)
-        console.log(data.table.rows[25].c[match+2]?.v)
-        document.querySelector('.sblue').innerHTML = data.table.rows[25].c[1].v
-        document.querySelector('.sred').innerHTML = data.table.rows[25].c[1].v
-        document.querySelector('.b1').innerHTML = data.table.rows[25].c[1]?.v
-        document.querySelector('.b2').innerHTML = data.table.rows[25].c[match+4]?.v
-        document.querySelector('.b3').innerHTML = data.table.rows[25].c[match+4]?.v
-        document.querySelector('.r1').innerHTML = data.table.rows[25].c[match+4]?.v
-        document.querySelector('.r2').innerHTML = data.table.rows[25].c[match+4]?.v
-        document.querySelector('.r3').innerHTML = data.table.rows[25].c[match+4]?.v
+        console.log(data.table.rows[0].c[match+1]?.v)
+        document.querySelector('.sblue').innerHTML = data.table.rows[5].c[6]?.v
+        document.querySelector('.sred').innerHTML = data.table.rows[5].c[1]?.v
+        document.querySelector('.b1').innerHTML = data.table.rows[2].c[5]?.v
+        document.querySelector('.b2').innerHTML = data.table.rows[3].c[5]?.v
+        document.querySelector('.b3').innerHTML = data.table.rows[4].c[5]?.v
+        document.querySelector('.r1').innerHTML = data.table.rows[2].c[0]?.v
+        document.querySelector('.r2').innerHTML = data.table.rows[3].c[0]?.v
+        document.querySelector('.r3').innerHTML = data.table.rows[4].c[0]?.v
         
-        console.log(data[0].bscore)
         getData()
       } catch (error) {
         // Timeouts if the request takes
@@ -49,7 +48,7 @@ async function getData()
 
 function start() {
     let minute = 0;
-    let second = 10;
+    let second = 3;
     let operation = 1
     document.querySelector(".timer").style.fontSize = `4vw`
     countdown(minute, second, operation)
@@ -59,7 +58,6 @@ function start() {
 
 }
 function countdown(minute, second, operation) {
-    document.querySelector(".timer").style.fontSize = `4vw`
     var total = minute*60+second;
     
     var timer = setInterval(function() {
@@ -79,19 +77,22 @@ function countdown(minute, second, operation) {
         {
             if (operation === 2) {
                 document.querySelector(".timer").style.fontSize = `2vw`
+                var mend = new  Audio('match_end.mp3')
+                mend.play()
                 document.querySelector(".timer").innerHTML = "GAME OVER";
                 clearInterval(timer)
             }
             if (operation === 1) {
+                document.querySelector(".timer").innerHTML = ""
                 document.querySelector(".timer").style.fontSize = `0.3vw`
-                var horn = new  Audio('horn.wav')
-                horn.play()
+                var mstart = new  Audio('match_start.wav')
+                mstart.play()
                 document.querySelector(".timer").innerHTML = "START"
 
                 document.querySelector(".timer").style.fontSize = `4vw`
 
-                minute = 0
-                second = 31
+                minute = 2
+                second = 30
                 operation = 2
                 countdown(minute, second, operation)
                 clearInterval(timer)
@@ -102,7 +103,7 @@ function countdown(minute, second, operation) {
         }
         if(total === 30) {
             var horn = new  Audio('horn.wav')
-                horn.play()
+            horn.play()
         }
         total--;
         if (tsec == 00) {
@@ -127,8 +128,8 @@ window.addEventListener('keypress', function (e)
     } 
     if (e.code === 'KeyS')
     {
-        this.document.querySelector('.logo').classList.add('score_anima')
-        this.document.querySelector('.timer').classList.add('score_anima')
+        this.document.querySelector('.logo').classList.toggle('score_anima')
+        this.document.querySelector('.timer').classList.toggle('score_anima')
     }
     if (e.key === 'b')
     {
