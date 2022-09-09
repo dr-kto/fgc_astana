@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 95vh;
+    height: 90vh;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -144,7 +144,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 200vmin;
+    width: 210vmin;
 }
 .logo img {
     object-fit: contain;
