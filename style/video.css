@@ -48,7 +48,7 @@ body {
     display: block;
     width: 40%;
     height: 33%;
-    font-size: 1.2vw;
+    font-size: 1vw;
     text-align: left;
     margin-left: 2vw;
     color: aliceblue;
@@ -60,12 +60,13 @@ body {
     display: block;
     width: 40%;
     height: 33%;
-    font-size: 1.2vw;
+    font-size: 1vw;
     text-align: left;
     margin-left: 9vw;
     color: aliceblue;
     text-transform: uppercase;
-
+    white-space: nowrap;
+    /* overflow: hidden; */
 
     
 }
@@ -181,3 +182,7 @@ body {
         margin
     }
 } */
+
+.dNone {
+    display: none;
+}

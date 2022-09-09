@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="./style/video.css">
 </head>
 <body>
-    <img id="gum-local" src="first.jfif" alt="">
-    <!-- <video id="gum-local" autoplay="" playsinline=""></video> -->
+    <img id="gum-local" src="./media/firstP.jpg" alt="">
+    <video id="gum-local" class="camera" autoplay="" playsinline="" muted=""></video>
+
+    <video src="./media/geneva.mp4" class="gen dNone" id="gum-local"  playsinline=""></video>
+    <video src="./media/kazakhstan.mp4" id="gum-local" class="kaz dNone" autoplay="" playsinline="" muted=""></video>
+    <video src="./media/uzbekistan.mp4" id="gum-local" class="uzb dNone" autoplay="" playsinline="" muted=""></video>
         <div class=""></div>
-        <div class="container">
+        <div class="container dNone">
             <div class="tblue">
                 <div class="teams">
                     <div class="b1"></div>
                     <div class="b2"></div>
                     <div class="b3"></div>
                 </div>
-                <div class="info1">Match 1</div>
+                <div class="info1">Match </div>
             </div>
             <div class=""></div>
             <div class="tred">
@@ -27,7 +31,7 @@
                     <div class="r2"></div>
                     <div class="r3"></div>
                 </div>
-                <div class="info2">First Global 2022</div>
+                <div class="info2">First Global Kazakhstan</div>
             </div>
             <div class="mid">
                 <div class="logo">
@@ -44,10 +48,22 @@
         </div>
         <script src="./js/video.js"></script>
         <script>
+            let mus;
             window.addEventListener('keypress', function (e) 
-        {
-            if (e.code === 'KeyC') 
             {
+                if(e.code === "KeyQ")
+                {
+                    document.querySelector('.sblue').classList.toggle("dNone")
+                    document.querySelector('.sred').classList.toggle("dNone")
+                    document.querySelector('.b1').classList.toggle("dNone")
+                    document.querySelector('.b2').classList.toggle("dNone")
+                    document.querySelector('.b3').classList.toggle("dNone")
+                    document.querySelector('.r1').classList.toggle("dNone")
+                    document.querySelector('.r2').classList.toggle("dNone")
+                    document.querySelector('.r3').classList.toggle("dNone")
+                }
+                if (e.code === 'KeyC') 
+                {
                                 /*
                     *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
                     *
@@ -64,7 +80,7 @@
                     };
 
                     function handleSuccess(stream) {
-                    const video = document.querySelector('video');
+                    const video = document.querySelector('.camera');
                     const videoTracks = stream.getVideoTracks();
                     console.log('Got stream with constraints:', constraints);
                     console.log(`Using video device: ${videoTracks[0].label}`);
@@ -105,7 +121,48 @@
                     document.querySelector('#showVideo').addEventListener('click', e => init(e));
         
                 }
+                if (e.code === 'KeyU') 
+                {
+                    document.querySelector(".uzb").classList.toggle("dNone")
+                    mus = new  Audio('Uzbekistan.mp3')
+                    mus.play()
+                    
+
+                }
+                if (e.code === "KeyP")
+                {
+                    mus.pause()
+                }
+                if (e.code === 'KeyG') 
+                {
+                    var mediaVideo = document.querySelector(".gen");
+                    mediaVideo.play()
+                    // if (mediaVideo.paused)
+                    // {
+                    //     mediaVideo.play()
+                    // }
+                    // else{
+                    //     mediaVideo.pause()
+                    // }
+                    document.querySelector(".gen").classList.toggle("dNone")
+                    
+                }
+            
+                if (e.code === 'KeyK') 
+                {
+                    document.querySelector(".kaz").classList.toggle("dNone")
+                    mus = new  Audio('Kazakhstan.mp3')
+                    mus.play()
+                }
+                if (e.code === 'KeyM')
+                {
+                    document.querySelector(".container").classList.toggle("dNone")
+                }
+
+            
+            
             })
+
         </script>
 </body>
 </html>

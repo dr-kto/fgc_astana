@@ -25,8 +25,8 @@ async function getData()
         .then(rep =>{
             data = JSON.parse(rep.substr(47).slice(0,-2));
         });
-        console.log(data.table.rows)
-        console.log(data.table.rows[0].c[match+1]?.v)
+        console.log(data)
+        // console.log(data.table.rows[0].c[match+1]?.v)
         document.querySelector('.sblue').innerHTML = data.table.rows[5].c[6]?.v
         document.querySelector('.sred').innerHTML = data.table.rows[5].c[1]?.v
         document.querySelector('.b1').innerHTML = data.table.rows[2].c[5]?.v
@@ -35,6 +35,7 @@ async function getData()
         document.querySelector('.r1').innerHTML = data.table.rows[2].c[0]?.v
         document.querySelector('.r2').innerHTML = data.table.rows[3].c[0]?.v
         document.querySelector('.r3').innerHTML = data.table.rows[4].c[0]?.v
+        // document.querySelector('.info1').innerHTML = data.table.rows[0].c[5]?.v
         
         getData()
       } catch (error) {
