@@ -25,7 +25,7 @@ async function getData()
         .then(rep =>{
             data = JSON.parse(rep.substr(47).slice(0,-2));
         });
-        console.log(data)
+        console.log(data.table.rows[5].c[1]?.v)
         // console.log(data.table.rows[0].c[match+1]?.v)
         document.querySelector('.sblue').innerHTML = data.table.rows[5].c[6]?.v
         document.querySelector('.sred').innerHTML = data.table.rows[5].c[1]?.v
