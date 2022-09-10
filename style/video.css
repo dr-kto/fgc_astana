@@ -3,15 +3,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 93.5vh;
+    height: 95vh;
     align-items: center;
     margin: 0;
     padding: 0;
     overflow-y: hidden;
 }
 .container {
-    width: 45%;
-    height: 17vh;
+    width: 55%;
+    height: 25vh;
     /* background-color: aliceblue; */
     display: flex;
     position: relative;
@@ -78,6 +78,7 @@ body {
 }
 .mid {
     border-radius: 4vw 4vw 0 0;
+    overflow: hidden;
 }
 
 .mid>div:not(:nth-child(3)) {
@@ -96,9 +97,10 @@ body {
     display: flex;
     flex-direction: row !important;
     justify-content: space-between !important;
+
 }
 .sblue {
-    padding: 1.3vmin 0;
+    padding: 5vmin 0;
     text-align: center;
     margin-top: .7vw;
     background-color: rgb(91, 91, 255);
@@ -106,7 +108,7 @@ body {
     height: 100% !important;
 }
 .sred {
-    padding: 1.3vmin 0;
+    padding: 5vmin 0;
     text-align: center;
     margin-top: .7vw;
     background-color: rgb(231, 5, 5);
@@ -188,10 +190,10 @@ body {
 }
 .qr {
     position: absolute;
-    left: 41%;
-    top: 22%;
-    width: 15vw;
-    height: 20vw;
+    right: 0%;
+    bottom: 1%;
+    width: 5vw;
+    height: 7vw;
 
     padding: 0.5vw;
     border-radius: 5vw;
@@ -204,4 +206,7 @@ body {
     width: 100%;
     height: 100%;
 
+}
+.tbody{
+    overflow: hidden;
 }
