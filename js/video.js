@@ -28,15 +28,17 @@ async function getData()
         });
         console.log(data.table.rows)
         // console.log(data.table.rows[0].c[match+1]?.v)
-        document.querySelector('.sblue').innerHTML = data?.table.rows[7].c[6]?.v
-        document.querySelector('.sred').innerHTML = data?.table.rows[7].c[1]?.v
-        document.querySelector('.b1').innerHTML = data?.table.rows[3].c[5]?.v
-        document.querySelector('.b2').innerHTML = data?.table.rows[4].c[5]?.v
-        document.querySelector('.b3').innerHTML = data?.table.rows[5].c[5]?.v
-        document.querySelector('.r1').innerHTML = data?.table.rows[3].c[0]?.v
-        document.querySelector('.r2').innerHTML = data?.table.rows[4].c[0]?.v
-        document.querySelector('.r3').innerHTML = data?.table.rows[5].c[0]?.v
-        document.querySelector('.info1').innerHTML = data?.table.rows[2].c[2]?.v
+        document.querySelector('.sblue').innerHTML = data?.table.rows[8].c[6]?.v
+        document.querySelector('.sred').innerHTML = data?.table.rows[8].c[1]?.v
+        document.querySelector('.b1').innerHTML = data?.table.rows[8].c[7]?.v
+        // document.querySelector('.b2').innerHTML = data?.table.rows[5].c[5]?.v
+        // document.querySelector('.b3').innerHTML = data?.table.rows[6].c[5]?.v
+        // document.querySelector('.b4').innerHTML = data?.table.rows[7].c[5]?.v
+        document.querySelector('.r1').innerHTML = data?.table.rows[8].c[2]?.v
+        // document.querySelector('.r2').innerHTML = data?.table.rows[5].c[0]?.v
+        // document.querySelector('.r3').innerHTML = data?.table.rows[6].c[0]?.v
+        // document.querySelector('.r4').innerHTML = data?.table.rows[7].c[0]?.v
+        document.querySelector('.info1').innerHTML = data?.table.rows[3].c[2]?.v
         
         getData()
       } catch (error) {
